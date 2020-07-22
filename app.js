@@ -22,7 +22,7 @@ window.addEventListener('load', ()=> {
             .then(data =>{
                 const { temperature, summary, icon }= data.currently;
                 //Set DOM elements from the API
-                temperatureDegree.textContent = temperature;
+                temperatureDegree.textContent = Math.floor(temperature);
                 temperatureDescription.textContent = summary;
                 locationTimezone.textContent = data.timezone;
 
@@ -40,7 +40,7 @@ window.addEventListener('load', ()=> {
                     }
                     else{
                         temperatureSpan.textContent = "F";
-                        temperatureDegree.textContent = temperature;
+                        temperatureDegree.textContent = Math.floor(temperature);
                     }
                 })
             })
